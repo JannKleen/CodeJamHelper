@@ -58,7 +58,7 @@ def get_file(file_name = None):
     else:
         fname = file_name
 
-    print "Opening %s ..." % fname    
+    print "Opening %s ..." % fname[0]    
     with open(os.path.join(expanded_download_dir, fname[0])) as fp:
         lines = map(lambda x: str.rstrip(x, '\n'), fp.readlines())
         
