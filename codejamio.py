@@ -20,7 +20,7 @@
 # IN THE SOFTWARE.
 
 # Local includes
-from ..settings import DOWNLOAD_DIR
+from settings import DOWNLOAD_DIR
 
 # System includes
 import os
