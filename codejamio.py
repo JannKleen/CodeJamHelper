@@ -20,7 +20,7 @@
 # IN THE SOFTWARE.
 
 # Local includes
-from settings import DOWNLOAD_DIR
+from settings import DOWNLOAD_DIR, OUTPUT_DIR
 
 # System includes
 import os
@@ -65,8 +65,9 @@ def get_file(file_name = None):
     return lines
 
 def put_file(lines, fname='codejam.out'):
+    expanded_output_dir = os.path.expanduser(OUTPUT_DIR)
     for idx, line in enumerate(lines):
-        lines[idx] = "Case #%s: %s\n" % (idx, line)
-    print "Writing %s lines to %s ..." % (idx, fname)
-    with open(fname, 'w') as fp:
+        lines[idx] = "Case #%s: %s\n" % (idx+1, line)
+    print "Writing %s lines to %s ..." % (idx+1, fname)
+    with open(os.path.join(expanded_output_dir, fname), 'w') as fp:
         fp.writelines(lines)
