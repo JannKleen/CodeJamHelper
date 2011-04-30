@@ -71,3 +71,4 @@ def put_file(lines, fname='codejam.out'):
     print "Writing %s lines to %s ..." % (idx+1, fname)
     with open(os.path.join(expanded_output_dir, fname), 'w') as fp:
         fp.writelines(lines)
+
